@@ -1,11 +1,10 @@
 import React, { FormEvent, useState } from 'react'
 import Link from 'next/link'
-import { NextPage } from 'next'
 import { addTodo } from '../../lib/api/TodosApi'
 import { makeStore } from '../../lib/store'
 import styles from '../../styles/Home.module.css'
 
-const form : NextPage = () => {
+const Form = () => {
 
     const store = makeStore()
     
@@ -25,10 +24,9 @@ const form : NextPage = () => {
         e.preventDefault()
         
         const res = await store.dispatch(addTodo.initiate(body)).unwrap()
-           
-        console.log(res);
 
         setResponseId(res.id)
+        
         setResponse(res)
         
     }
@@ -75,4 +73,4 @@ const form : NextPage = () => {
 
 }
 
-export default form
+export default Form

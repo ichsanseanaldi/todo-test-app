@@ -5,8 +5,6 @@ import styles from '../styles/Home.module.css'
 
 const Pagination = ({currentPage}:any) => {
 
-  console.log("fromPagination",currentPage)
-
   const pageNumbers = usePagination(currentPage)
 
   return (
